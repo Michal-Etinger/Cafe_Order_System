@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAY COFFEE! - Operator</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/operator.css">
+</head>
+
+<body>
+    <div id="page">
+        <div>
+            <div id="header">
+                <a href="{{ url_for('index') }}"><img src="../static/images/logo.png" alt="Image"></a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('menu') }}">Menu</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="current">
+                        <a href="{{ url_for('login') }}">Login</a>
+                    </li>
+                </ul>
+        </div>
+
+        <div id="body">
+            <div id="content">
+                <h2>Open Orders</h2>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>
+                            <th>Items</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.customer_name }}</td>
+                            <td>{{ order.items }}</td>
+                            <td>{{ order.status }}</td>
+                            <td>
+                                {% if order.status == 'Open' %}
+                                <form action="{{ url_for('close_order_route', order_id=order.id) }}" method="POST">
+                                    <button type="submit" class="btn">Close Order</button>
+                                </form>
+                                {% else %}
+                                <span>Closed</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div>
+                <a href="index.html"><img src="../static/images/logo2.png" alt="Image"></a>
+                <p class="footnote">
+                    &copy; Yay!Koffee 2011.<br>All Rights Reserved.
+                </p>
+            </div>
+            <div class="section">
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('menu') }}">Menu</a>
+                    </li>
+                
+                    <li>
+                        <a href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                </ul>
+                <div id="connect">
+                    <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+                    <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+                    <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google+</a>
+                    <a href="index.html" id="rss">RSS</a>
+                </div>
+                <p>
+                    This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

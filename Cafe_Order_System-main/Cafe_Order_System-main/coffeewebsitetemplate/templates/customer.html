@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAY COFFEE! - Customer</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/customer.css">
+</head>
+
+<body>
+    <div id="page">
+        <div>
+            <div id="header">
+                <a href="{{ url_for('index') }}"><img src="../static/images/logo.png" alt="Image"></a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('menu') }}">Menu</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="current">
+                        <a href="{{ url_for('login') }}">Login</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="body" class="customer-page">
+                <div id="content1">
+                    <h2>Place Your Order:</h2>
+                    <form id="place-order-form" action="/customer/place-order" method="POST">
+                        <div class="form-group">
+                            <label for="customer-name">Your Name:</label>
+                            <input type="text" id="customer-name" name="customer_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="order-items">Order Items:</label>
+                            <!-- תיבת בחירה עם רשימת המוצרים -->
+                            <select id="order-items" name="order_items" required>
+                                <option value="">Select an item</option>
+                                <option value="Cappuccino">Cappuccino</option>
+                                <option value="Latte">Latte</option>
+                                <option value="Americano">Americano</option>
+                                <option value="Espresso">Espresso</option>
+                                <option value="Flat White">Flat White</option>
+                                <option value="Mocha">Mocha</option>
+                                <option value="Cold Brew">Cold Brew</option>
+                                <option value="Iced Latte">Iced Latte</option>
+                                <option value="Frappé">Frappé</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn">Place Order</button>
+                        </div>
+                    </form>
+
+                    <div class="review-section">
+                        <h2>Submit a Review:</h2>
+                        <form id="submit-review-form" action="/customer/review" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="review-text">Your Review:</label>
+                                <textarea id="review-text" name="review_text" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating">Rating:</label>
+                                <select id="rating" name="rating" required>
+                                    <option value="1">1 Star</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="5">5 Stars</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-photo">Upload Photo:</label>
+                                <input type="file" id="review-photo" name="review_photo" accept="image/*">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn">Submit Review</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div>
+                    <a href="index.html"><img src="../static/images/logo2.png" alt="Image"></a>
+                    <p class="footnote">
+                        &copy; Yay!Koffee 2011.<br>All Rights Reserved.
+                    </p>
+                </div>
+                <div class="section">
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('menu') }}">Menu</a>
+                        </li>
+                    
+                        <li>
+                            <a href="{{ url_for('about') }}">About Us</a>
+                        </li>
+                    </ul>
+                    <div id="connect">
+                        <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+                        <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+                        <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google+</a>
+                        <a href="index.html" id="rss">RSS</a>
+                    </div>
+                    <p>
+                        This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript for showing success alerts -->
+    <script>
+        // Handle Place Order form submission
+        document.getElementById('place-order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your order has been placed successfully!');
+            this.submit();
+        });
+
+        // Handle Submit Review form submission
+        document.getElementById('submit-review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your review has been submitted successfully!');
+            this.submit();
+        });
+    </script>
+</body>
+</html>

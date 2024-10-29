@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YAY COFFEE! - Login</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+</head>
+<body>
+    <div id="page" class="login-page">
+        <div>
+            <div id="header">
+                <a href="{{ url_for('index') }}"><img src="../static/images/logo.png" alt="YAY COFFEE! Logo"></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li class="current"><a href="{{ url_for('login') }}">Login</a></li>
+                </ul>
+            </div>
+            <div id="body">
+                <div id="content" class="login-form-content">
+                    <div class="login-form">
+                        <h2>Login</h2>
+                        <form action="/login" method="POST">
+                            <div class="login-form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="login-form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div>
+                    <a href="index.html"><img src="../static/images/logo2.png" alt="YAY COFFEE! Logo"></a>
+                    <p class="footnote">
+                        &copy; YAY COFFEE! 2024.<br>All Rights Reserved.
+                    </p>
+                </div>
+                <div class="section">
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('menu') }}">Menu</a>
+                        </li>
+                    
+                        <li>
+                            <a href="{{ url_for('about') }}">About Us</a>
+                        </li>
+                    </ul>
+                    <div id="connect">
+                        <a href="https://www.facebook.com/YAYCOFFEE" target="_blank" id="facebook">Facebook</a>
+                        <a href="https://www.twitter.com/YAYCOFFEE" target="_blank" id="twitter">Twitter</a>
+                        <a href="https://www.instagram.com/YAYCOFFEE" target="_blank" id="instagram">Instagram</a>
+                    </div>
+                    <p>
+                        YAY COFFEE! was created with a passion for quality coffee and a commitment to our community. We invite you to experience our warm hospitality and exceptional brews. If you need any help, don't hesitate to reach out to us.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
