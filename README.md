@@ -30,7 +30,7 @@ The *YAY COFFEE!* system follows the MVC (Model-View-Controller) architecture:
 - *Controller*: The Flask app (app.py) routes user requests to the correct functionality and templates.
 
 ## Screenshots
-Login screen where users enter credentials to access the system.
+###Login screen where users enter credentials to access the system.
 
 ![תמונה של WhatsApp‏ 2024-10-29 בשעה 14 15 07_df8cc6c3](https://github.com/user-attachments/assets/bc4fdb3a-4a2b-4e42-8081-3846689732b0)
 
