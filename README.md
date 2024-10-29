@@ -1,6 +1,6 @@
 # YAY COFFEE! Project
 
-This project done by: Michal Etinger & Dore Amiram
+This project was made by: Michal Etinger & Dore Amiram
 
 ## Project Overview
 The *YAY COFFEE!* project is a web-based application designed to manage a coffee shop's online operations. This platform enables administrators to manage menu items, customers to place orders and submit reviews, and operators to handle orders efficiently.
