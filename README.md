@@ -32,7 +32,7 @@ The *YAY COFFEE!* system follows the MVC (Model-View-Controller) architecture:
 ## Screenshots
 Login screen where users enter credentials to access the system.
 
-![תמונה של WhatsApp‏ 2024-10-29 בשעה 14 15 07_0a114cfb](https://github.com/user-attachments/assets/05a0d792-acba-47e9-bc7b-e102aed8c099)
+![תמונה של WhatsApp‏ 2024-10-29 בשעה 14 15 07_df8cc6c3](https://github.com/user-attachments/assets/bc4fdb3a-4a2b-4e42-8081-3846689732b0)
 
 Admin screen to add new menu items.
 
